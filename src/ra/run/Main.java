@@ -102,13 +102,19 @@ public class Main {
     public static void search(){
         System.out.println("Nhập tên sách cần tìm");
         String searchName = sc.nextLine();
+        Book searchBook = new Book();
+        boolean check = false;
         for (Book item : bookList) {
             if (item.getBookName().toLowerCase().contains(searchName.toLowerCase())) {
-                item.displayData();
+                searchBook = item;
+                check = true;
                 break;
-            }else {
-                System.out.println("Sản phầm không tìm thấy");
             }
+        }
+        if(check){
+            searchBook.displayData();
+        }else {
+            System.out.println("Mã sách không tìm thấy");
         }
 
     }
