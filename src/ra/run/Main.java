@@ -105,6 +105,7 @@ public class Main {
         for (Book item : bookList) {
             if (item.getBookName().toLowerCase().contains(searchName.toLowerCase())) {
                 item.displayData();
+                break;
             }else {
                 System.out.println("Sản phầm không tìm thấy");
             }
